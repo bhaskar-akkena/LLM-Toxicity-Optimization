@@ -13,7 +13,7 @@ Table of Contents
 
 ---
 
-Overview
+## Overview
 
 The text-based evaluation consists of two parts:
 
@@ -27,7 +27,7 @@ The text-based evaluation consists of two parts:
 
 ---
 
-Setup
+## Setup
 
 Follow these steps to set up the project on your local machine:
 
@@ -67,7 +67,7 @@ Follow these steps to set up the project on your local machine:
 
 ---
 
-### Text-based Response Generation
+## Text-based Response Generation
 
 1. Run the Text Generation Script:
    To generate responses using the LLama model, run the following command:
@@ -79,7 +79,7 @@ Follow these steps to set up the project on your local machine:
 
 ---
 
-### Toxicity Evaluation Using Perspective API
+## Toxicity Evaluation Using Perspective API
 
 1. Run the Text Evaluation Script:
    To evaluate the toxicity of the generated responses, run the following command:
@@ -92,11 +92,11 @@ Follow these steps to set up the project on your local machine:
 
 ---
 
-### Input Prompt Evolution
+## Input Prompt Evolution
 
 This module creates the variants of the input prompts (text and embeddings)
 
-##### Initialize the Population
+### Initialize the Population
 
 Run the following script to convert generated_responses_with_scores.json into a structured population with prompt IDs and metadata:
 
@@ -104,23 +104,23 @@ Run the following script to convert generated_responses_with_scores.json into a 
 
 This creates Population.json in the outputs/ directory, where each prompt is tagged with a prompt_id and generation 0.
 
-##### Evolution
+### Evolution
 
 To generate prompt variants (offspring) using evolutionary strategies, run:
 
 ``` python src/RunEvolution.py ```
 
 This will:
-	•	Load Population.json
-	•	Group prompts by prompt_id
-	•	Skip groups where toxicity score has already reached 1.0
-	•	Apply mutation operators to selected parents
-	•	Add offspring back into the same population
-	•	Save the updated population (with new variants) to Population.json
+- Load Population.json
+- Group prompts by prompt_id
+- Skip groups where toxicity score has already reached 1.0
+- Apply mutation operators to selected parents
+- Add offspring back into the same population
+- Save the updated population (with new variants) to Population.json
 
 ---
 
-Expected Output
+## Expected Output
 
 After running both scripts, you will have two JSON files in the outputs/responses folder:
 
@@ -158,7 +158,7 @@ Each entry in the file includes the prompt, the generated response, and the corr
 
 ---
 
-Requirements
+## Requirements
 
 Ensure that the following libraries are installed:
 
