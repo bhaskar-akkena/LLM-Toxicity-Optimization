@@ -1,0 +1,23 @@
+\doxysection{/\+Users/onkars/\+Documents/\+Projects/\+LLM-\/\+Toxicity-\/\+Optimization/src/ea/\+Run\+Evolution.py File Reference}
+\hypertarget{_run_evolution_8py}{}\label{_run_evolution_8py}\index{/Users/onkars/Documents/Projects/LLM-\/Toxicity-\/Optimization/src/ea/RunEvolution.py@{/Users/onkars/Documents/Projects/LLM-\/Toxicity-\/Optimization/src/ea/RunEvolution.py}}
+
+
+Main script for evolving LLM input prompts using mutation operators.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_run_evolution}{Run\+Evolution}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_run_evolution_ae9c31f79fbb6ae0a6b399b7c77124eac}{Run\+Evolution.\+main}} ()
+\begin{DoxyCompactList}\small\item\em Main driver function to perform one generation of input prompt evolution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main script for evolving LLM input prompts using mutation operators. 
+
+Loads a prompt population from JSON, applies variation operators, and saves new prompt variants (offspring) back into the same population. Terminates evolution per prompt\+\_\+id if max toxicity of 1.\+0 is reached. 
