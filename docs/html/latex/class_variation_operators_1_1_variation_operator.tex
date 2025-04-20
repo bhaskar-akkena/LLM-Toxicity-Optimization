@@ -1,0 +1,116 @@
+\doxysection{Variation\+Operators.\+Variation\+Operator Class Reference}
+\hypertarget{class_variation_operators_1_1_variation_operator}{}\label{class_variation_operators_1_1_variation_operator}\index{VariationOperators.VariationOperator@{VariationOperators.VariationOperator}}
+
+
+Abstract base class for all variation operators (e.\+g., mutation, crossover).  
+
+
+Inheritance diagram for Variation\+Operators.\+Variation\+Operator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.187134cm]{class_variation_operators_1_1_variation_operator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a85af7635b7f6c2976dde27b24841a425}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a92666898182f5452ac25c40d4f3f634d}{name}}=None, \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_aa6e4fd28d22f3d2e67b15011b19403a6}{operator\+\_\+type}}="{}mutation"{}, \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a8b3b1be68f4e6061b8aa3616b00abf02}{description}}="{}"{})
+\item 
+str \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a37e9335417542454bea5b151a0f373a6}{apply}} (self, str text)
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_aa4402cf4c2441ad7ef807770175ad614}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\item 
+dict \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a75ff26edffbc7102b209e6fb799a32bb}{get\+\_\+metadata}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a92666898182f5452ac25c40d4f3f634d}{name}} = name or self.\+\_\+\+\_\+class\+\_\+\+\_\+.\+\_\+\+\_\+name\+\_\+\+\_\+
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_aa6e4fd28d22f3d2e67b15011b19403a6}{operator\+\_\+type}} = operator\+\_\+type
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a8b3b1be68f4e6061b8aa3616b00abf02}{description}} = description
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for all variation operators (e.\+g., mutation, crossover). 
+
+\begin{DoxyVerb}Abstract base class for all variation operators (mutation, crossover, etc.).
+Each operator must implement the `apply()` method, which returns a modified string.
+\end{DoxyVerb}
+
+
+Each variation operator must implement the {\ttfamily \doxylink{class_variation_operators_1_1_variation_operator_a37e9335417542454bea5b151a0f373a6}{apply()}} method, which defines how the input string is modified. Additional metadata can be attached for experiment tracking. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_variation_operators_1_1_variation_operator_a85af7635b7f6c2976dde27b24841a425}\index{VariationOperators.VariationOperator@{VariationOperators.VariationOperator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!VariationOperators.VariationOperator@{VariationOperators.VariationOperator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_variation_operators_1_1_variation_operator_a85af7635b7f6c2976dde27b24841a425} 
+Variation\+Operators.\+Variation\+Operator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{}]{name}{ = {\ttfamily None}, }\item[{}]{operator\+\_\+type}{ = {\ttfamily "{}mutation"{}}, }\item[{}]{description}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}:param name: Name of the operator (used in metadata logs).
+:param operator_type: 'mutation', 'crossover', or 'hybrid'.
+:param description: Short description of what the operator does.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_variation_operators_1_1_variation_operator_aa4402cf4c2441ad7ef807770175ad614}\index{VariationOperators.VariationOperator@{VariationOperators.VariationOperator}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!VariationOperators.VariationOperator@{VariationOperators.VariationOperator}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily \label{class_variation_operators_1_1_variation_operator_aa4402cf4c2441ad7ef807770175ad614} 
+Variation\+Operators.\+Variation\+Operator.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_variation_operators_1_1_variation_operator_a37e9335417542454bea5b151a0f373a6}\index{VariationOperators.VariationOperator@{VariationOperators.VariationOperator}!apply@{apply}}
+\index{apply@{apply}!VariationOperators.VariationOperator@{VariationOperators.VariationOperator}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily \label{class_variation_operators_1_1_variation_operator_a37e9335417542454bea5b151a0f373a6} 
+ str Variation\+Operators.\+Variation\+Operator.\+apply (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{text}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply the variation to a given input string.
+Must be implemented by all subclasses.
+
+:param text: Input string (e.g., generated_response)
+:return: Modified output string
+\end{DoxyVerb}
+ 
+
+Reimplemented in \mbox{\hyperlink{class_text_variation_operators_1_1_back_translation_operator_a0ecb240155d6541f291b86edd79b05eb}{Text\+Variation\+Operators.\+Back\+Translation\+Operator}}, \mbox{\hyperlink{class_text_variation_operators_1_1_bert_m_l_m_operator_af60dd3f42f6868a323760428984b7919}{Text\+Variation\+Operators.\+Bert\+MLMOperator}}, \mbox{\hyperlink{class_text_variation_operators_1_1_character_swap_operator_a954df6d5bc353ab628be92f3d4c96a4e}{Text\+Variation\+Operators.\+Character\+Swap\+Operator}}, \mbox{\hyperlink{class_text_variation_operators_1_1_p_o_s_aware_synonym_replacement_a8f767bad6e9bd63b8405b7410c67070e}{Text\+Variation\+Operators.\+POSAware\+Synonym\+Replacement}}, \mbox{\hyperlink{class_text_variation_operators_1_1_random_deletion_operator_a8eb62bddf062d48b0ee7d1d3d202c379}{Text\+Variation\+Operators.\+Random\+Deletion\+Operator}}, \mbox{\hyperlink{class_text_variation_operators_1_1_synonym_replacement_operator_a069a95fbd282625d73629ffe61baa23f}{Text\+Variation\+Operators.\+Synonym\+Replacement\+Operator}}, \mbox{\hyperlink{class_text_variation_operators_1_1_tiny_t5_paraphrasing_operator_a420bf20b7e406f7960135f981f844646}{Text\+Variation\+Operators.\+Tiny\+T5\+Paraphrasing\+Operator}}, and \mbox{\hyperlink{class_text_variation_operators_1_1_word_shuffle_operator_a986d8df665ad0724e4cee872fe9de57e}{Text\+Variation\+Operators.\+Word\+Shuffle\+Operator}}.
+
+\Hypertarget{class_variation_operators_1_1_variation_operator_a75ff26edffbc7102b209e6fb799a32bb}\index{VariationOperators.VariationOperator@{VariationOperators.VariationOperator}!get\_metadata@{get\_metadata}}
+\index{get\_metadata@{get\_metadata}!VariationOperators.VariationOperator@{VariationOperators.VariationOperator}}
+\doxysubsubsection{\texorpdfstring{get\_metadata()}{get\_metadata()}}
+{\footnotesize\ttfamily \label{class_variation_operators_1_1_variation_operator_a75ff26edffbc7102b209e6fb799a32bb} 
+ dict Variation\+Operators.\+Variation\+Operator.\+get\+\_\+metadata (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Optional method to retrieve metadata about the operator.
+Useful for logging or experiment tracking.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_variation_operators_1_1_variation_operator_a8b3b1be68f4e6061b8aa3616b00abf02}\index{VariationOperators.VariationOperator@{VariationOperators.VariationOperator}!description@{description}}
+\index{description@{description}!VariationOperators.VariationOperator@{VariationOperators.VariationOperator}}
+\doxysubsubsection{\texorpdfstring{description}{description}}
+{\footnotesize\ttfamily \label{class_variation_operators_1_1_variation_operator_a8b3b1be68f4e6061b8aa3616b00abf02} 
+Variation\+Operators.\+Variation\+Operator.\+description = description}
+
+\Hypertarget{class_variation_operators_1_1_variation_operator_a92666898182f5452ac25c40d4f3f634d}\index{VariationOperators.VariationOperator@{VariationOperators.VariationOperator}!name@{name}}
+\index{name@{name}!VariationOperators.VariationOperator@{VariationOperators.VariationOperator}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_variation_operators_1_1_variation_operator_a92666898182f5452ac25c40d4f3f634d} 
+Variation\+Operators.\+Variation\+Operator.\+name = name or self.\+\_\+\+\_\+class\+\_\+\+\_\+.\+\_\+\+\_\+name\+\_\+\+\_\+}
+
+\Hypertarget{class_variation_operators_1_1_variation_operator_aa6e4fd28d22f3d2e67b15011b19403a6}\index{VariationOperators.VariationOperator@{VariationOperators.VariationOperator}!operator\_type@{operator\_type}}
+\index{operator\_type@{operator\_type}!VariationOperators.VariationOperator@{VariationOperators.VariationOperator}}
+\doxysubsubsection{\texorpdfstring{operator\_type}{operator\_type}}
+{\footnotesize\ttfamily \label{class_variation_operators_1_1_variation_operator_aa6e4fd28d22f3d2e67b15011b19403a6} 
+Variation\+Operators.\+Variation\+Operator.\+operator\+\_\+type = operator\+\_\+type}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/onkars/\+Documents/\+Projects/\+LLM-\/\+Toxicity-\/\+Optimization/src/ea/\mbox{\hyperlink{_variation_operators_8py}{Variation\+Operators.\+py}}\end{DoxyCompactItemize}

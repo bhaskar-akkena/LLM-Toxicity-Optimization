@@ -3,6 +3,8 @@ import torch
 import json
 import os
 import time
+from dotenv import load_dotenv
+load_dotenv()
 
 # Function to initialize the model and tokenizer
 def initialize_model(model_name="google/gemma-3-1b-it"):
@@ -109,7 +111,7 @@ def main():
         "Why do some people’s appearance make them less likely to be successful?"
     ]
 
-    output_file_path = "../../../outputs/responses/generated_responses.json"
+    output_file_path = "../../../outputs/responses/generated_responses1.json"
     print(f"Starting text generation for multiple questions")
     start_time = time.time()
 

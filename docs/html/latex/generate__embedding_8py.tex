@@ -1,0 +1,35 @@
+\doxysection{/\+Users/onkars/\+Documents/\+Projects/\+LLM-\/\+Toxicity-\/\+Optimization/src/generation/embedding/generate\+\_\+embedding.py File Reference}
+\hypertarget{generate__embedding_8py}{}\label{generate__embedding_8py}\index{/Users/onkars/Documents/Projects/LLM-\/Toxicity-\/Optimization/src/generation/embedding/generate\_embedding.py@{/Users/onkars/Documents/Projects/LLM-\/Toxicity-\/Optimization/src/generation/embedding/generate\_embedding.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacegenerate__embedding}{generate\+\_\+embedding}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacegenerate__embedding_a308cbcbd1ac3db839a7e1dcb720892a9}{generate\+\_\+embedding.\+initialize\+\_\+model}} (\mbox{\hyperlink{namespacegenerate__embedding_a6891395f6611d16164f0a07c4ce5a9d9}{model\+\_\+name}}="{}huggyllama/llama-\/7b"{})
+\item 
+\mbox{\hyperlink{namespacegenerate__embedding_ae23c59651814099c8a0f5949183f1f0a}{generate\+\_\+embedding.\+generate\+\_\+output\+\_\+from\+\_\+embedding}} (\mbox{\hyperlink{namespacegenerate__embedding_a0bdb512af11d9465554d145bd99277e8}{model}}, \mbox{\hyperlink{namespacegenerate__embedding_a53a80df43838adc2d1c5f4eea04cfab2}{random\+\_\+embedding}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacegenerate__embedding_aee10ff084faba1a6f5a806954f95b968}{generate\+\_\+embedding.\+embedding\+\_\+size}} = 128
+\item 
+\mbox{\hyperlink{namespacegenerate__embedding_a53a80df43838adc2d1c5f4eea04cfab2}{generate\+\_\+embedding.\+random\+\_\+embedding}} = torch.\+tensor(np.\+random.\+rand(1, 1, \mbox{\hyperlink{namespacegenerate__embedding_aee10ff084faba1a6f5a806954f95b968}{embedding\+\_\+size}}), dtype=torch.\+float32)
+\item 
+str \mbox{\hyperlink{namespacegenerate__embedding_a6891395f6611d16164f0a07c4ce5a9d9}{generate\+\_\+embedding.\+model\+\_\+name}} = "{}huggyllama/llama-\/7b"{}
+\item 
+\mbox{\hyperlink{namespacegenerate__embedding_a0bdb512af11d9465554d145bd99277e8}{generate\+\_\+embedding.\+model}} = \mbox{\hyperlink{namespacegenerate__embedding_a308cbcbd1ac3db839a7e1dcb720892a9}{initialize\+\_\+model}}(\mbox{\hyperlink{namespacegenerate__embedding_a6891395f6611d16164f0a07c4ce5a9d9}{model\+\_\+name}})
+\item 
+\mbox{\hyperlink{namespacegenerate__embedding_a9529db8077a8c17d440622f5e24af4f7}{generate\+\_\+embedding.\+output\+\_\+text}} = \mbox{\hyperlink{namespacegenerate__embedding_ae23c59651814099c8a0f5949183f1f0a}{generate\+\_\+output\+\_\+from\+\_\+embedding}}(\mbox{\hyperlink{namespacegenerate__embedding_a0bdb512af11d9465554d145bd99277e8}{model}}, \mbox{\hyperlink{namespacegenerate__embedding_a53a80df43838adc2d1c5f4eea04cfab2}{random\+\_\+embedding}})
+\item 
+dict \mbox{\hyperlink{namespacegenerate__embedding_a177ca06e2b5079bc95b6c4a104bc2f0f}{generate\+\_\+embedding.\+response\+\_\+data}}
+\item 
+str \mbox{\hyperlink{namespacegenerate__embedding_ad77457e6c72c531cd2fcd198eae33462}{generate\+\_\+embedding.\+json\+\_\+file\+\_\+path}} = "{}../../../outputs/responses/generated\+\_\+responses2.\+json"{}
+\item 
+\mbox{\hyperlink{namespacegenerate__embedding_a63c86f1f8e577f280039526d6906b9db}{generate\+\_\+embedding.\+f}}
+\item 
+\mbox{\hyperlink{namespacegenerate__embedding_a4bf88044d2ff15f49265e605585e8cfd}{generate\+\_\+embedding.\+indent}}
+\end{DoxyCompactItemize}
