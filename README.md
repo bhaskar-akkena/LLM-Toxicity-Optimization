@@ -107,26 +107,24 @@ Follow these steps to set up the project on your local machine:
    - Send each response to the Perspective API to evaluate its toxicity.
    - Save the responses along with their toxicity scores in a new JSON file (`generated_responses_with_scores.json`) in the `outputs/responses` folder.
 
+2. Run the following script to convert `generated_responses_with_scores.json` into a structured population with prompt IDs and metadata:
+   ```bash
+   python src/generation/text/initialize_population.py
+   ```
+
+   This creates `Population.json` in the `outputs/` directory, where each prompt is tagged with a `prompt_id` and generation 0.
+
 ---
 
 ## Input Prompt Evolution
 
 This module creates the variants of the input prompts (text and embeddings).
 
-### Initialize the Population
-
-Run the following script to convert `generated_responses_with_scores.json` into a structured population with prompt IDs and metadata:
-```bash
-python src/initialize_population.py
-```
-
-This creates `Population.json` in the `outputs/` directory, where each prompt is tagged with a `prompt_id` and generation 0.
-
 ### Evolution
 
 To generate prompt variants (offspring) using evolutionary strategies, run:
 ```bash
-python src/RunEvolution.py
+python src/ea/RunEvolution.py
 ```
 
 This will:
@@ -221,16 +219,6 @@ You can install all required libraries using:
 ```bash
 pip install -r requirements.txt
 ```
-
-Here is the content for the `requirements.txt` file:
-```
-google-api-python-client
-transformers
-requests
-python-dotenv
-huggingface-hub
-```
-
 ---
 
 ## License
