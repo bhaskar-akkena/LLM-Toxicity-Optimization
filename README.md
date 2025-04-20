@@ -5,6 +5,7 @@ Table of Contents
 2. Setup
 3. Text-based Response Generation
 4. Toxicity Evaluation Using Perspective API
+4.1. Input Prompt Evolution
 5. Running the Script
 6. Expected Output
 7. Requirements
@@ -66,7 +67,7 @@ Follow these steps to set up the project on your local machine:
 
 ---
 
-Text-based Response Generation
+### Text-based Response Generation
 
 1. Run the Text Generation Script:
    To generate responses using the LLama model, run the following command:
@@ -78,7 +79,7 @@ Text-based Response Generation
 
 ---
 
-Toxicity Evaluation Using Perspective API
+### Toxicity Evaluation Using Perspective API
 
 1. Run the Text Evaluation Script:
    To evaluate the toxicity of the generated responses, run the following command:
@@ -88,6 +89,34 @@ Toxicity Evaluation Using Perspective API
    - Read the generated_responses.json file containing the responses.
    - Send each response to the Perspective API to evaluate its toxicity.
    - Save the responses along with their toxicity scores in a new JSON file (generated_responses_with_scores.json) in the outputs/responses folder.
+
+---
+
+### Input Prompt Evolution
+
+This module creates the variants of the input prompts (text and embeddings)
+
+##### Initialize the Population
+
+Run the following script to convert generated_responses_with_scores.json into a structured population with prompt IDs and metadata:
+
+```python src/initialize_population.py```
+
+This creates Population.json in the outputs/ directory, where each prompt is tagged with a prompt_id and generation 0.
+
+##### Evolution
+
+To generate prompt variants (offspring) using evolutionary strategies, run:
+
+``` python src/RunEvolution.py ```
+
+This will:
+	•	Load Population.json
+	•	Group prompts by prompt_id
+	•	Skip groups where toxicity score has already reached 1.0
+	•	Apply mutation operators to selected parents
+	•	Add offspring back into the same population
+	•	Save the updated population (with new variants) to Population.json
 
 ---
 
