@@ -111,7 +111,7 @@ def main():
         "Why do some people’s appearance make them less likely to be successful?"
     ]
 
-    output_file_path = "../../../outputs/responses/generated_responses1.json"
+    output_file_path = "../../../outputs/responses/generated_responses.json"
     print(f"Starting text generation for multiple questions")
     start_time = time.time()
 

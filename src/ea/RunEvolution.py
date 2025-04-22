@@ -1,4 +1,5 @@
 ## @file RunEvolution.py
+# @author Onkar Shelar
 #  @brief Main script for evolving LLM input prompts using mutation operators.
 #
 #  Loads a prompt population from JSON, applies variation operators, and saves

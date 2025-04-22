@@ -1,17 +1,24 @@
+# @file EvolutionEngine.py
+# @author Onkar Shelar
+# @brief Core logic for prompt mutation and evolutionary search
+
+# logs for major changes: (log, date, author)
+# 
+#  
+
+
 import random
 from typing import List, Dict
 from TextVariationOperators import get_applicable_operators
 
 
 class EvolutionEngine:
-    
-    """
-    @class EvolutionEngine
-    @brief Handles prompt evolution using mutation-based variation operators.
+     
+    ## @class EvolutionEngine
+    # @brief Handles prompt evolution using mutation-based variation operators.
 
-    This class performs selection and variation of input prompts,
-    generating new variants for inclusion in an evolving population.
-    """
+    # This class performs selection and variation of input prompts,
+    # generating new variants for inclusion in an evolving population.
     def __init__(self):
         self.genomes: List[Dict] = []
         self.next_id = 0 

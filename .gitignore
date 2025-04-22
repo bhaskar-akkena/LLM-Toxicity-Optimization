@@ -1,6 +1,10 @@
 /venv
 .idea
-*.DS_Store
+.DS_Store
+**/.DS_Store
 .env
 experiment.py
-*./__pycache__
+__pycache__/
+**/__pycache__/
+.vscode
+**/.vscode/

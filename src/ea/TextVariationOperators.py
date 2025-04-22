@@ -1,4 +1,5 @@
 ## @file TextVariationOperators.py
+# @author Onkar Shelar
 #  @brief Contains concrete mutation operators for prompt-level variations.
 #
 #  This module defines various prompt mutation operators like synonym replacement,
