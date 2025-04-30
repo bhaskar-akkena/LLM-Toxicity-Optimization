@@ -1,3 +1,11 @@
+## @file initialize_population.py
+#  @author Onkar Shelar
+#  @brief Initializes a structured genome population JSON from scored prompt-response pairs.
+#
+#  This script processes a scored responses JSON file to assign unique prompt IDs,
+#  and formats the data into a genome structure compatible with evolutionary mutation pipelines.
+#  The output is sorted and saved for use in prompt evolution.
+
 import json
 import os
 
@@ -74,6 +82,7 @@ def load_and_initialize_population(input_path: str, output_path: str):
 
 # Main execution if this script is run directly
 if __name__ == "__main__":
-    input_file = "../../../outputs/responses/generated_responses_with_scores.json"  # Path to input data
-    output_file = "../../../outputs/Population.json"  # Path to output the initialized population
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    input_file = os.path.normpath(os.path.join(base_dir, '../../../outputs/responses/generated_responses_with_scores.json'))
+    output_file = os.path.normpath(os.path.join(base_dir, '../../../outputs/Population.json'))
     load_and_initialize_population(input_file, output_file)

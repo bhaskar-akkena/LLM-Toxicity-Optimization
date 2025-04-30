@@ -1,0 +1,75 @@
+\doxysection{Text\+Variation\+Operators.\+Synonym\+Replacement\+Operator Class Reference}
+\hypertarget{class_text_variation_operators_1_1_synonym_replacement_operator}{}\label{class_text_variation_operators_1_1_synonym_replacement_operator}\index{TextVariationOperators.SynonymReplacementOperator@{TextVariationOperators.SynonymReplacementOperator}}
+
+
+Replaces a word from a predefined dictionary with a synonym.  
+
+
+Inheritance diagram for Text\+Variation\+Operators.\+Synonym\+Replacement\+Operator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_text_variation_operators_1_1_synonym_replacement_operator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_text_variation_operators_1_1_synonym_replacement_operator_aad8ca729be5f6005bb6946c827cfd3d4}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\item 
+str \mbox{\hyperlink{class_text_variation_operators_1_1_synonym_replacement_operator_a069a95fbd282625d73629ffe61baa23f}{apply}} (self, str text)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_variation_operators_1_1_variation_operator}{Variation\+Operators.\+Variation\+Operator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a85af7635b7f6c2976dde27b24841a425}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a92666898182f5452ac25c40d4f3f634d}{name}}=None, \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_aa6e4fd28d22f3d2e67b15011b19403a6}{operator\+\_\+type}}="{}mutation"{}, \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a8b3b1be68f4e6061b8aa3616b00abf02}{description}}="{}"{})
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_aa4402cf4c2441ad7ef807770175ad614}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\item 
+dict \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a75ff26edffbc7102b209e6fb799a32bb}{get\+\_\+metadata}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_variation_operators_1_1_variation_operator}{Variation\+Operators.\+Variation\+Operator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a92666898182f5452ac25c40d4f3f634d}{name}} = name or self.\+\_\+\+\_\+class\+\_\+\+\_\+.\+\_\+\+\_\+name\+\_\+\+\_\+
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_aa6e4fd28d22f3d2e67b15011b19403a6}{operator\+\_\+type}} = operator\+\_\+type
+\item 
+\mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a8b3b1be68f4e6061b8aa3616b00abf02}{description}} = description
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Replaces a word from a predefined dictionary with a synonym. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_text_variation_operators_1_1_synonym_replacement_operator_aad8ca729be5f6005bb6946c827cfd3d4}\index{TextVariationOperators.SynonymReplacementOperator@{TextVariationOperators.SynonymReplacementOperator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!TextVariationOperators.SynonymReplacementOperator@{TextVariationOperators.SynonymReplacementOperator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_synonym_replacement_operator_aad8ca729be5f6005bb6946c827cfd3d4} 
+Text\+Variation\+Operators.\+Synonym\+Replacement\+Operator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_text_variation_operators_1_1_synonym_replacement_operator_a069a95fbd282625d73629ffe61baa23f}\index{TextVariationOperators.SynonymReplacementOperator@{TextVariationOperators.SynonymReplacementOperator}!apply@{apply}}
+\index{apply@{apply}!TextVariationOperators.SynonymReplacementOperator@{TextVariationOperators.SynonymReplacementOperator}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_synonym_replacement_operator_a069a95fbd282625d73629ffe61baa23f} 
+ str Text\+Variation\+Operators.\+Synonym\+Replacement\+Operator.\+apply (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{text}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Apply the variation to a given input string.
+Must be implemented by all subclasses.
+
+:param text: Input string (e.g., generated_response)
+:return: Modified output string
+\end{DoxyVerb}
+ 
+
+Reimplemented from \mbox{\hyperlink{class_variation_operators_1_1_variation_operator_a37e9335417542454bea5b151a0f373a6}{Variation\+Operators.\+Variation\+Operator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/onkars/\+Documents/\+Projects/\+LLM-\/\+Toxicity-\/\+Optimization/src/ea/\mbox{\hyperlink{_text_variation_operators_8py}{Text\+Variation\+Operators.\+py}}\end{DoxyCompactItemize}

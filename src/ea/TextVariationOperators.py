@@ -33,6 +33,8 @@ SYNONYMS = {
     "sad": ["unhappy", "miserable", "gloomy"],
 }
 
+## @class SynonymReplacementOperator
+#  @brief Replaces a word from a predefined dictionary with a synonym.
 class SynonymReplacementOperator(VariationOperator):
     def __init__(self):
         super().__init__("SynonymReplacement", "mutation", "Replaces a word with a synonym from a simple dictionary.")
@@ -47,6 +49,8 @@ class SynonymReplacementOperator(VariationOperator):
         words[idx] = random.choice(SYNONYMS[word])
         return " ".join(words)
 
+## @class RandomDeletionOperator
+#  @brief Deletes a randomly chosen word from the input text.
 class RandomDeletionOperator(VariationOperator):
     def __init__(self):
         super().__init__("RandomDeletion", "mutation", "Deletes a random word.")
@@ -58,6 +62,8 @@ class RandomDeletionOperator(VariationOperator):
         del words[random.randint(0, len(words) - 1)]
         return " ".join(words)
 
+## @class WordShuffleOperator
+#  @brief Swaps two adjacent words in the input text.
 class WordShuffleOperator(VariationOperator):
     def __init__(self):
         super().__init__("WordShuffle", "mutation", "Swaps two adjacent words.")
@@ -70,6 +76,8 @@ class WordShuffleOperator(VariationOperator):
         words[idx], words[idx + 1] = words[idx + 1], words[idx]
         return " ".join(words)
 
+## @class CharacterSwapOperator
+#  @brief Swaps two characters in a randomly selected word.
 class CharacterSwapOperator(VariationOperator):
     def __init__(self):
         super().__init__("CharacterSwap", "mutation", "Swaps two characters in a random word.")
@@ -86,6 +94,8 @@ class CharacterSwapOperator(VariationOperator):
         words[idx] = "".join(chars)
         return " ".join(words)
 
+## @class POSAwareSynonymReplacement
+#  @brief Uses spaCy POS tags and WordNet to replace a word with a context-aware synonym.
 class POSAwareSynonymReplacement(VariationOperator):
     def __init__(self):
         super().__init__("POSAwareSynonymReplacement", "mutation", "WordNet synonym replacement based on spaCy POS.")
@@ -121,6 +131,8 @@ class POSAwareSynonymReplacement(VariationOperator):
 
         return text  # fallback
 
+## @class BertMLMOperator
+#  @brief Uses BERT Masked Language Model to replace one word with a predicted alternative.
 class BertMLMOperator(VariationOperator):
     def __init__(self):
         super().__init__("BertMLM", "mutation", "Uses BERT MLM to replace one word.")
@@ -155,6 +167,8 @@ class BertMLMOperator(VariationOperator):
             seen.add(result.lower())
         return text 
 
+## @class TinyT5ParaphrasingOperator
+#  @brief Uses a fine-tuned TinyT5 model to generate paraphrased versions of the input text.
 class TinyT5ParaphrasingOperator(VariationOperator):
     def __init__(self):
         super().__init__("TinyT5Paraphrasing", "mutation", "Uses T5 to paraphrase entire input.")
@@ -184,6 +198,8 @@ class TinyT5ParaphrasingOperator(VariationOperator):
                 seen.add(normalized)
         return text
 
+## @class BackTranslationOperator
+#  @brief Translates the input text to Hindi and back to English for paraphrasing via back-translation.
 class BackTranslationOperator(VariationOperator):
     def __init__(self):
         super().__init__("BackTranslation", "mutation", "Performs EN→HI→EN back-translation.")
