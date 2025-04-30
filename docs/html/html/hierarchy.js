@@ -12,5 +12,6 @@ var hierarchy =
         [ "TextVariationOperators.WordShuffleOperator", "class_text_variation_operators_1_1_word_shuffle_operator.html", null ]
       ] ]
     ] ],
+    [ "EvolutionEngine", "class_evolution_engine.html", null ],
     [ "EvolutionEngine.EvolutionEngine", "class_evolution_engine_1_1_evolution_engine.html", null ]
 ];

@@ -9,7 +9,7 @@
 \item 
 List\mbox{[}dict\mbox{]} \mbox{\hyperlink{class_evolution_engine_1_1_evolution_engine_a848cdf7fac57c2e5d88d415e1c0a45df}{tournament\+\_\+selection}} (self, List\mbox{[}dict\mbox{]} \mbox{\hyperlink{class_evolution_engine_1_1_evolution_engine_ae4badc4da1318ccce3cd0c9a3a2b58ce}{genomes}}, int k, int tournament\+\_\+size=3)
 \item 
-List\mbox{[}Dict\mbox{]} \mbox{\hyperlink{class_evolution_engine_1_1_evolution_engine_a7aa6e5a54ee2600a68208e876d0becd5}{generate\+\_\+offspring}} (self, List\mbox{[}Dict\mbox{]} parents, int num\+\_\+offspring\+\_\+per\+\_\+operator=2)
+List\mbox{[}Dict\mbox{]} \mbox{\hyperlink{class_evolution_engine_1_1_evolution_engine_a71430465e316bf0eae85621cd3e363f1}{generate\+\_\+offspring}} (self, List\mbox{[}Dict\mbox{]} parents, int num\+\_\+offspring\+\_\+per\+\_\+operator=20)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -19,15 +19,6 @@ list \mbox{\hyperlink{class_evolution_engine_1_1_evolution_engine_ae4badc4da1318
 int \mbox{\hyperlink{class_evolution_engine_1_1_evolution_engine_a755cd93dbbbc7e74b9509821fd2a5de2}{next\+\_\+id}} = 0
 \end{DoxyCompactItemize}
 
-
-\doxysubsection{Detailed Description}
-\begin{DoxyVerb}@class EvolutionEngine
-@brief Handles prompt evolution using mutation-based variation operators.
-
-This class performs selection and variation of input prompts,
-generating new variants for inclusion in an evolving population.
-\end{DoxyVerb}
- 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_evolution_engine_1_1_evolution_engine_a1d5ff860ef43b9885319039cb029fe5b}\index{EvolutionEngine.EvolutionEngine@{EvolutionEngine.EvolutionEngine}!\_\_init\_\_@{\_\_init\_\_}}
@@ -39,11 +30,11 @@ Evolution\+Engine.\+Evolution\+Engine.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyP
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_evolution_engine_1_1_evolution_engine_a7aa6e5a54ee2600a68208e876d0becd5}\index{EvolutionEngine.EvolutionEngine@{EvolutionEngine.EvolutionEngine}!generate\_offspring@{generate\_offspring}}
+\Hypertarget{class_evolution_engine_1_1_evolution_engine_a71430465e316bf0eae85621cd3e363f1}\index{EvolutionEngine.EvolutionEngine@{EvolutionEngine.EvolutionEngine}!generate\_offspring@{generate\_offspring}}
 \index{generate\_offspring@{generate\_offspring}!EvolutionEngine.EvolutionEngine@{EvolutionEngine.EvolutionEngine}}
 \doxysubsubsection{\texorpdfstring{generate\_offspring()}{generate\_offspring()}}
-{\footnotesize\ttfamily \label{class_evolution_engine_1_1_evolution_engine_a7aa6e5a54ee2600a68208e876d0becd5} 
- List\mbox{[}Dict\mbox{]} Evolution\+Engine.\+Evolution\+Engine.\+generate\+\_\+offspring (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}Dict\mbox{]}}]{parents}{, }\item[{int }]{num\+\_\+offspring\+\_\+per\+\_\+operator}{ = {\ttfamily 2}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_evolution_engine_1_1_evolution_engine_a71430465e316bf0eae85621cd3e363f1} 
+ List\mbox{[}Dict\mbox{]} Evolution\+Engine.\+Evolution\+Engine.\+generate\+\_\+offspring (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{List\mbox{[}Dict\mbox{]}}]{parents}{, }\item[{int }]{num\+\_\+offspring\+\_\+per\+\_\+operator}{ = {\ttfamily 20}}\end{DoxyParamCaption})}
 
 \Hypertarget{class_evolution_engine_1_1_evolution_engine_a848cdf7fac57c2e5d88d415e1c0a45df}\index{EvolutionEngine.EvolutionEngine@{EvolutionEngine.EvolutionEngine}!tournament\_selection@{tournament\_selection}}
 \index{tournament\_selection@{tournament\_selection}!EvolutionEngine.EvolutionEngine@{EvolutionEngine.EvolutionEngine}}

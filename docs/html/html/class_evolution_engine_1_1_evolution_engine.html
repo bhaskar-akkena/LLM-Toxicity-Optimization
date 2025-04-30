@@ -118,8 +118,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7b40ea951b522247d38dc4113f236c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a848cdf7fac57c2e5d88d415e1c0a45df" id="r_a848cdf7fac57c2e5d88d415e1c0a45df"><td class="memItemLeft" align="right" valign="top">List[dict]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a848cdf7fac57c2e5d88d415e1c0a45df">tournament_selection</a> (self, List[dict] <a class="el" href="#ae4badc4da1318ccce3cd0c9a3a2b58ce">genomes</a>, int k, int tournament_size=3)</td></tr>
 <tr class="separator:a848cdf7fac57c2e5d88d415e1c0a45df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7aa6e5a54ee2600a68208e876d0becd5" id="r_a7aa6e5a54ee2600a68208e876d0becd5"><td class="memItemLeft" align="right" valign="top">List[Dict]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7aa6e5a54ee2600a68208e876d0becd5">generate_offspring</a> (self, List[Dict] parents, int num_offspring_per_operator=2)</td></tr>
-<tr class="separator:a7aa6e5a54ee2600a68208e876d0becd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71430465e316bf0eae85621cd3e363f1" id="r_a71430465e316bf0eae85621cd3e363f1"><td class="memItemLeft" align="right" valign="top">List[Dict]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71430465e316bf0eae85621cd3e363f1">generate_offspring</a> (self, List[Dict] parents, int num_offspring_per_operator=20)</td></tr>
+<tr class="separator:a71430465e316bf0eae85621cd3e363f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -128,13 +128,7 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a755cd93dbbbc7e74b9509821fd2a5de2" id="r_a755cd93dbbbc7e74b9509821fd2a5de2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a755cd93dbbbc7e74b9509821fd2a5de2">next_id</a> = 0</td></tr>
 <tr class="separator:a755cd93dbbbc7e74b9509821fd2a5de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">@class EvolutionEngine
-@brief Handles prompt evolution using mutation-based variation operators.
-
-This class performs selection and variation of input prompts,
-generating new variants for inclusion in an evolving population.
-</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1d5ff860ef43b9885319039cb029fe5b" name="a1d5ff860ef43b9885319039cb029fe5b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d5ff860ef43b9885319039cb029fe5b">&#9670;&#160;</a></span>__init__()</h2>
 
@@ -153,8 +147,8 @@ generating new variants for inclusion in an evolving population.
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7aa6e5a54ee2600a68208e876d0becd5" name="a7aa6e5a54ee2600a68208e876d0becd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7aa6e5a54ee2600a68208e876d0becd5">&#9670;&#160;</a></span>generate_offspring()</h2>
+<a id="a71430465e316bf0eae85621cd3e363f1" name="a71430465e316bf0eae85621cd3e363f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71430465e316bf0eae85621cd3e363f1">&#9670;&#160;</a></span>generate_offspring()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +166,7 @@ generating new variants for inclusion in an evolving population.
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int </td>          <td class="paramname"><span class="paramname"><em>num_offspring_per_operator</em></span><span class="paramdefsep"> = </span><span class="paramdefval">2</span>&#160;)</td>
+          <td class="paramtype">int </td>          <td class="paramname"><span class="paramname"><em>num_offspring_per_operator</em></span><span class="paramdefsep"> = </span><span class="paramdefval">20</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -47,6 +47,6 @@ def load_and_initialize_population(input_path: str, output_path: str):
 
 
 if __name__ == "__main__":
-    input_file = "../../../outputs/responses/generated_responses_with_scores.json"
+    input_file = "../../../outputs/responses/generated_responses_with_scores1.json"
     output_file = "../../../outputs/Population.json"
     load_and_initialize_population(input_file, output_file)

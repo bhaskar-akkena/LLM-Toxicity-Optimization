@@ -15,5 +15,6 @@ var annotated_dup =
     ] ],
     [ "VariationOperators", "namespace_variation_operators.html", [
       [ "VariationOperator", "class_variation_operators_1_1_variation_operator.html", "class_variation_operators_1_1_variation_operator" ]
-    ] ]
+    ] ],
+    [ "EvolutionEngine", "class_evolution_engine.html", null ]
 ];
