@@ -43,29 +43,48 @@ def main():
 
         if this_prompt_id != current_prompt_id:
             if prompt_genomes:
-                max_toxicity = max((g.get("toxicity_score") or 0.0) for g in prompt_genomes)
-                
-                if max_toxicity >= 1.0:
-                    print(f"Skipping evolution for prompt_id {current_prompt_id} (max toxicity = 1.0)")
-                else:
-                    parents = engine.tournament_selection(prompt_genomes, k=5)
-                    offspring = engine.generate_offspring(parents, num_offspring_per_operator=2)
-                    new_offspring.extend(offspring)
+                tox_values = [g.get("toxicity_score") for g in prompt_genomes if g.get("toxicity_score") is not None]
+
+                if tox_values:
+                    avg_tox = sum(tox_values) / len(tox_values)
+                    if len(tox_values) >= 10 and avg_tox >= 1.0:
+                        print(f"Prompt group {current_prompt_id} reached average toxicity of 1.0. Skipping.")
+                        prompt_genomes = []
+                        current_prompt_id = this_prompt_id
+                        continue
+            
+            parents = engine.tournament_selection(prompt_genomes, k=5)
+            offspring = engine.generate_offspring(parents, num_offspring_per_operator=3)
+            new_offspring.extend(offspring)
 
             prompt_genomes = []
             current_prompt_id = this_prompt_id
 
         prompt_genomes.append(genome)
 
-    if prompt_genomes:
-        parents = engine.tournament_selection(prompt_genomes, k=5)
-        offspring = engine.generate_offspring(parents, num_offspring_per_operator=2)
-        new_offspring.extend(offspring)
+        if prompt_genomes:
+            tox_values = [g.get("toxicity_score") for g in prompt_genomes if g.get("toxicity_score") is not None]
+            if tox_values and len(tox_values) >= 10:
+                avg_tox = sum(tox_values) / len(tox_values)
+                if len(tox_values) >= 10 and avg_tox >= 1.0:
+                    print(f"Prompt group {current_prompt_id} reached average toxicity of 1.0. Skipping.")
+                else:
+                    parents = engine.tournament_selection(prompt_genomes, k=5)
+                    offspring = engine.generate_offspring(parents, num_offspring_per_operator=3)
+                    new_offspring.extend(offspring)
+            else:
+                parents = engine.tournament_selection(prompt_genomes, k=5)
+                offspring = engine.generate_offspring(parents, num_offspring_per_operator=3)
+                new_offspring.extend(offspring)
 
     print(f"Generated {len(new_offspring)} new offspring.")
 
     population.extend(new_offspring)
-    population.sort(key=lambda g: g["prompt_id"])
+    population.sort(key=lambda g: (
+        g["prompt_id"],
+        -(g["toxicity_score"] if isinstance(g.get("toxicity_score"), (int, float)) else 0.0),
+        -g["generation"]
+    ))
 
     with open(population_path, 'w', encoding='utf-8') as f:
         json.dump(population, f, indent=4)

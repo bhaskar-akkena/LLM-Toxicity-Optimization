@@ -41,7 +41,7 @@ class EvolutionEngine:
 
         return selected_parents
 
-    def generate_offspring(self, parents: List[Dict], num_offspring_per_operator: int = 2) -> List[Dict]:
+    def generate_offspring(self, parents: List[Dict], num_offspring_per_operator: int = 20) -> List[Dict]:
         operators = get_applicable_operators(len(parents))
         offspring = []
 
@@ -51,6 +51,10 @@ class EvolutionEngine:
 
                 try:
                     variant_prompt = operator.apply(parent["prompt"])
+                    if variant_prompt.strip().lower() in set(g["prompt"].strip().lower() for g in self.genomes if g["prompt_id"] == parent["prompt_id"]): 
+                        continue  # skip duplicate
+                    seen_prompts = set(g["prompt"].strip().lower() for g in self.genomes if g["prompt_id"] == parent["prompt_id"])
+                    seen_prompts.add(variant_prompt.strip().lower())
                 except Exception as e:
                     print(f"[Variation Failed] {operator.name}: {e}")
                     continue
