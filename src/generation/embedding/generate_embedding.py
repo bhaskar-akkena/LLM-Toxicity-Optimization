@@ -4,7 +4,7 @@ import json
 import numpy as np
 import time
 
-# Function to initialize the LLAMA model
+# Function to initialize the llama_model model
 def initialize_model(model_name="huggyllama/llama-7b"):
     print("Initializing model...")
     start_time = time.time()
@@ -17,7 +17,7 @@ def initialize_model(model_name="huggyllama/llama-7b"):
     return model
 
 # Step 1: Generate a random embedding using torch
-embedding_size = 128  # Replace with LLAMA's actual embedding size (e.g., 4096 for llama-7b)
+embedding_size = 128  # Replace with llama_model's actual embedding size (e.g., 4096 for llama-7b)
 random_embedding = torch.tensor(np.random.rand(1, 1, embedding_size), dtype=torch.float32)  # Shape (batch_size, seq_length, embedding_size)
 
 # Step 2: Pass random embedding directly to the model using inputs_embeds
