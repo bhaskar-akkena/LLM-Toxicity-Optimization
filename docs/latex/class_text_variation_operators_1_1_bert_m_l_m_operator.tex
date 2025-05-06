@@ -1,0 +1,91 @@
+\doxysection{Text\+Variation\+Operators.\+Bert\+MLMOperator Class Reference}
+\hypertarget{class_text_variation_operators_1_1_bert_m_l_m_operator}{}\label{class_text_variation_operators_1_1_bert_m_l_m_operator}\index{TextVariationOperators.BertMLMOperator@{TextVariationOperators.BertMLMOperator}}
+
+
+Uses BERT Masked Language Model to replace one word with a predicted alternative.  
+
+
+Inheritance diagram for Text\+Variation\+Operators.\+Bert\+MLMOperator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_text_variation_operators_1_1_bert_m_l_m_operator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_text_variation_operators_1_1_bert_m_l_m_operator_a9f0d76cc4ebd1886532f55081ae53658}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em {\bfseries{init}} function \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{class_text_variation_operators_1_1_bert_m_l_m_operator_af60dd3f42f6868a323760428984b7919}{apply}} (self, str text)
+\begin{DoxyCompactList}\small\item\em apply function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_text_variation_operators_1_1_bert_m_l_m_operator_a1b9056e3e92dd0c71a01d34aed2e3188}{tokenizer}} = Bert\+Tokenizer.\+from\+\_\+pretrained("{}bert-\/base-\/uncased"{})
+\item 
+\mbox{\hyperlink{class_text_variation_operators_1_1_bert_m_l_m_operator_a02015f5be879927a0998f274b4243e8a}{model}} = Bert\+For\+Masked\+LM.\+from\+\_\+pretrained("{}bert-\/base-\/uncased"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Uses BERT Masked Language Model to replace one word with a predicted alternative. 
+
+\doxylink{class_text_variation_operators_1_1_bert_m_l_m_operator}{Bert\+MLMOperator} class
+
+Class that encapsulates \doxylink{class_text_variation_operators_1_1_bert_m_l_m_operator}{Bert\+MLMOperator} behavior. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_text_variation_operators_1_1_bert_m_l_m_operator_a9f0d76cc4ebd1886532f55081ae53658}\index{TextVariationOperators.BertMLMOperator@{TextVariationOperators.BertMLMOperator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!TextVariationOperators.BertMLMOperator@{TextVariationOperators.BertMLMOperator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_bert_m_l_m_operator_a9f0d76cc4ebd1886532f55081ae53658} 
+Text\+Variation\+Operators.\+Bert\+MLMOperator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+{\bfseries{init}} function 
+
+{\bfseries{init}} method. \begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_text_variation_operators_1_1_bert_m_l_m_operator_af60dd3f42f6868a323760428984b7919}\index{TextVariationOperators.BertMLMOperator@{TextVariationOperators.BertMLMOperator}!apply@{apply}}
+\index{apply@{apply}!TextVariationOperators.BertMLMOperator@{TextVariationOperators.BertMLMOperator}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_bert_m_l_m_operator_af60dd3f42f6868a323760428984b7919} 
+ str Text\+Variation\+Operators.\+Bert\+MLMOperator.\+apply (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{text}{}\end{DoxyParamCaption})}
+
+
+
+apply function 
+
+apply method. 
+\begin{DoxyParams}{Parameters}
+{\em text} & str (Any) Input text\+: str \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_text_variation_operators_1_1_bert_m_l_m_operator_a02015f5be879927a0998f274b4243e8a}\index{TextVariationOperators.BertMLMOperator@{TextVariationOperators.BertMLMOperator}!model@{model}}
+\index{model@{model}!TextVariationOperators.BertMLMOperator@{TextVariationOperators.BertMLMOperator}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_bert_m_l_m_operator_a02015f5be879927a0998f274b4243e8a} 
+Text\+Variation\+Operators.\+Bert\+MLMOperator.\+model = Bert\+For\+Masked\+LM.\+from\+\_\+pretrained("{}bert-\/base-\/uncased"{})}
+
+\Hypertarget{class_text_variation_operators_1_1_bert_m_l_m_operator_a1b9056e3e92dd0c71a01d34aed2e3188}\index{TextVariationOperators.BertMLMOperator@{TextVariationOperators.BertMLMOperator}!tokenizer@{tokenizer}}
+\index{tokenizer@{tokenizer}!TextVariationOperators.BertMLMOperator@{TextVariationOperators.BertMLMOperator}}
+\doxysubsubsection{\texorpdfstring{tokenizer}{tokenizer}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_bert_m_l_m_operator_a1b9056e3e92dd0c71a01d34aed2e3188} 
+Text\+Variation\+Operators.\+Bert\+MLMOperator.\+tokenizer = Bert\+Tokenizer.\+from\+\_\+pretrained("{}bert-\/base-\/uncased"{})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/ea/\mbox{\hyperlink{_text_variation_operators_8py}{Text\+Variation\+Operators.\+py}}\end{DoxyCompactItemize}

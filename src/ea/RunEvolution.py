@@ -1,5 +1,4 @@
 ## @file RunEvolution.py
-# @author Onkar Shelar
 #  @brief Main script for evolving LLM input prompts using mutation operators.
 #
 #  Loads a prompt population from JSON, applies variation operators, and saves
@@ -9,11 +8,18 @@
 import json
 import os
 from EvolutionEngine import EvolutionEngine
+import nltk
+
+nltk.data.path.append('../../../.venv/nltk_data')
+
 
 ## @brief Main driver function to perform one generation of input prompt evolution.
 #
 #  Loads a population from JSON, performs tournament selection and variation
 #  on each prompt_id group, appends offspring, and saves back the updated population.
+## main function
+# @brief Main driver function to perform one generation of input prompt evolution.  Loads a population from JSON, performs tournament selection and variation on each prompt_id group, appends offspring, and saves back the updated population.
+# @return None
 def main():
     population_path = "../../outputs/Population.json"
 
@@ -52,7 +58,7 @@ def main():
                         prompt_genomes = []
                         current_prompt_id = this_prompt_id
                         continue
-            
+
             parents = engine.tournament_selection(prompt_genomes, k=5)
             offspring = engine.generate_offspring(parents, num_offspring_per_operator=3)
             new_offspring.extend(offspring)

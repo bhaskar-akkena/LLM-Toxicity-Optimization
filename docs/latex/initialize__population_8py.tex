@@ -1,0 +1,32 @@
+\doxysection{src/generation/text/initialize\+\_\+population.py File Reference}
+\hypertarget{initialize__population_8py}{}\label{initialize__population_8py}\index{src/generation/text/initialize\_population.py@{src/generation/text/initialize\_population.py}}
+
+
+Initializes a structured genome population JSON from scored prompt-\/response pairs.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceinitialize__population}{initialize\+\_\+population}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceinitialize__population_aec3aab8b14a51a97e915069e55762def}{initialize\+\_\+population.\+load\+\_\+and\+\_\+initialize\+\_\+population}} (str input\+\_\+path, str output\+\_\+path)
+\begin{DoxyCompactList}\small\item\em load\+\_\+and\+\_\+initialize\+\_\+population function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceinitialize__population_ab7874e469cb2193404328b6a3bb4c1c0}{initialize\+\_\+population.\+base\+\_\+dir}} = os.\+path.\+dirname(os.\+path.\+abspath(\+\_\+\+\_\+file\+\_\+\+\_\+))
+\item 
+\mbox{\hyperlink{namespaceinitialize__population_a702331e4ca74da41af0a56a1c9872a95}{initialize\+\_\+population.\+input\+\_\+file}} = os.\+path.\+normpath(os.\+path.\+join(\mbox{\hyperlink{namespaceinitialize__population_ab7874e469cb2193404328b6a3bb4c1c0}{base\+\_\+dir}}, \textquotesingle{}../../../outputs/responses/generated\+\_\+responses\+\_\+with\+\_\+scores.\+json\textquotesingle{}))
+\item 
+\mbox{\hyperlink{namespaceinitialize__population_a52fe693ed8846abf8855fc337211c676}{initialize\+\_\+population.\+output\+\_\+file}} = os.\+path.\+normpath(os.\+path.\+join(\mbox{\hyperlink{namespaceinitialize__population_ab7874e469cb2193404328b6a3bb4c1c0}{base\+\_\+dir}}, \textquotesingle{}../../../outputs/Population.\+json\textquotesingle{}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Initializes a structured genome population JSON from scored prompt-\/response pairs. 
+
+This script processes a scored responses JSON file to assign unique prompt IDs, and formats the data into a genome structure compatible with evolutionary mutation pipelines. The output is sorted and saved for use in prompt evolution. 

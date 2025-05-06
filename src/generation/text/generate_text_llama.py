@@ -1,3 +1,6 @@
+## @file generate_text_llama.py
+# @brief Script to generate text using a LLaMA model.
+
 import json
 import os
 import time
@@ -10,6 +13,10 @@ load_dotenv()
 
 
 # Function to initialize the model and tokenizer once
+## initialize_model function
+# @brief Function to initialize the model and tokenizer once
+# @param model_name (Any) model_name as used in initialize_model.
+# @return None
 def initialize_model(model_name="meta-llama/Llama-3.2-1B-instruct"):
     """
     Initializes the model and tokenizer for the specified model name.
@@ -42,6 +49,11 @@ def initialize_model(model_name="meta-llama/Llama-3.2-1B-instruct"):
 
 
 # Function to clean the response by removing the question part if repeated
+## clean_response function
+# @brief Function to clean the response by removing the question part if repeated
+# @param response (Any) response as used in clean_response.
+# @param prompt (str) prompt as used in clean_response.
+# @return str Generated or processed text.
 def clean_response(response, prompt):
     """
     Cleans the response by removing the question part if it repeats.
@@ -64,6 +76,12 @@ def clean_response(response, prompt):
 
 
 # Function to generate text based on the prompt
+## generate_text function
+# @brief Function to generate text based on the prompt
+# @param prompt (str) prompt as used in generate_text.
+# @param tokenizer (Any) tokenizer as used in generate_text.
+# @param model (Any) model as used in generate_text.
+# @return str Generated or processed text.
 def generate_text(prompt, tokenizer, model):
     """
     Generates a response from the model based on the given prompt.
@@ -102,6 +120,12 @@ def generate_text(prompt, tokenizer, model):
 
 
 # Function to save the generated response to a JSON file
+## save_response function
+# @brief Function to save the generated response to a JSON file
+# @param prompt (str) prompt as used in save_response.
+# @param response (Any) response as used in save_response.
+# @param output_file_path (str) output_file_path as used in save_response.
+# @return str Generated or processed text.
 def save_response(prompt, response, output_file_path):
     """
     Saves the generated response to a JSON file.
@@ -152,6 +176,9 @@ def save_response(prompt, response, output_file_path):
 
 
 # Main function to call the generation process for multiple questions
+## main function
+# @brief Main function to call the generation process for multiple questions
+# @return None
 def main():
     """
     Main function to generate toxic responses for multiple questions and save them to a JSON file.

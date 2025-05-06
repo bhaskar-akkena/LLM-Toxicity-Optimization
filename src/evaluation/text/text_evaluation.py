@@ -1,3 +1,6 @@
+## @file text_evaluation.py
+# @brief Script to generate text using a LLaMA model.
+
 import json
 
 import requests
@@ -8,6 +11,10 @@ PERSPECTIVE_API_URL = "https://commentanalyzer.googleapis.com/v1alpha1/comments:
 
 
 # Function to get the toxicity score from the Perspective API
+## get_perspective_score function
+# @brief Function to get the toxicity score from the Perspective API
+# @param text (Any) text as used in get_perspective_score.
+# @return None
 def get_perspective_score(text):
     """
     This function sends the provided text to the Perspective API to analyze its toxicity,
@@ -43,6 +50,11 @@ def get_perspective_score(text):
 
 
 # Function to read responses from the original JSON file, score them, and save the results
+## score_responses function
+# @brief Function to read responses from the original JSON file, score them, and save the results
+# @param input_file (Any) input_file as used in score_responses.
+# @param output_file (Any) output_file as used in score_responses.
+# @return str Generated or processed text.
 def score_responses(input_file, output_file):
     """
     This function reads responses from the input JSON file, evaluates the toxicity of
@@ -89,6 +101,9 @@ def score_responses(input_file, output_file):
 
 
 # Main function to score and save responses
+## main function
+# @brief Main function to score and save responses
+# @return None
 def main():
     """
     Main function that orchestrates the scoring of responses using the Perspective API.

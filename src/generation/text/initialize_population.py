@@ -1,5 +1,4 @@
 ## @file initialize_population.py
-#  @author Onkar Shelar
 #  @brief Initializes a structured genome population JSON from scored prompt-response pairs.
 #
 #  This script processes a scored responses JSON file to assign unique prompt IDs,
@@ -10,6 +9,11 @@ import json
 import os
 
 
+## load_and_initialize_population function
+# @brief load_and_initialize_population method.
+# @param input_path: str (str) Input input_path: str
+# @param output_path: str (str) Input output_path: str
+# @return None
 def load_and_initialize_population(input_path: str, output_path: str):
     """
     Loads data from a JSON file, processes it, and initializes a population of genomes with associated scores.

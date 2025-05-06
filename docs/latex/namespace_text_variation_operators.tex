@@ -1,0 +1,123 @@
+\doxysection{Text\+Variation\+Operators Namespace Reference}
+\hypertarget{namespace_text_variation_operators}{}\label{namespace_text_variation_operators}\index{TextVariationOperators@{TextVariationOperators}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_text_variation_operators_1_1_back_translation_operator}{Back\+Translation\+Operator}}
+\begin{DoxyCompactList}\small\item\em Translates the input text to Hindi and back to English for paraphrasing via back-\/translation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_text_variation_operators_1_1_bert_m_l_m_operator}{Bert\+MLMOperator}}
+\begin{DoxyCompactList}\small\item\em Uses BERT Masked Language Model to replace one word with a predicted alternative. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_text_variation_operators_1_1_character_swap_operator}{Character\+Swap\+Operator}}
+\begin{DoxyCompactList}\small\item\em Swaps two characters in a randomly selected word. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_text_variation_operators_1_1_p_o_s_aware_synonym_replacement}{POSAware\+Synonym\+Replacement}}
+\begin{DoxyCompactList}\small\item\em Uses spa\+Cy POS tags and Word\+Net to replace a word with a context-\/aware synonym. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_text_variation_operators_1_1_random_deletion_operator}{Random\+Deletion\+Operator}}
+\begin{DoxyCompactList}\small\item\em Deletes a randomly chosen word from the input text. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_text_variation_operators_1_1_synonym_replacement_operator}{Synonym\+Replacement\+Operator}}
+\begin{DoxyCompactList}\small\item\em Replaces a word from a predefined dictionary with a synonym. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_text_variation_operators_1_1_tiny_t5_paraphrasing_operator}{Tiny\+T5\+Paraphrasing\+Operator}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_text_variation_operators_1_1_tiny_t5_paraphrasing_operator}{Tiny\+T5\+Paraphrasing\+Operator} class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_text_variation_operators_1_1_word_shuffle_operator}{Word\+Shuffle\+Operator}}
+\begin{DoxyCompactList}\small\item\em Swaps two adjacent words in the input text. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_text_variation_operators_a8b696a64e5513646c0562aa19149c460}{get\+\_\+applicable\+\_\+operators}} (int num\+\_\+parents)
+\begin{DoxyCompactList}\small\item\em Returns the appropriate list of operators depending on the number of parents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_text_variation_operators_ac5293638aa288ce3975623f4ae5b22d6}{nlp}} = spacy.\+load("{}en\+\_\+core\+\_\+web\+\_\+sm"{})
+\item 
+dict \mbox{\hyperlink{namespace_text_variation_operators_afd943578addf54e1669896d31f1d2dac}{SYNONYMS}}
+\item 
+list \mbox{\hyperlink{namespace_text_variation_operators_a7c5372309ab626a02f7f83fadd2df741}{SINGLE\+\_\+\+PARENT\+\_\+\+OPERATORS}}
+\item 
+list \mbox{\hyperlink{namespace_text_variation_operators_a0b66117e98f26ca0f4a6aefceab8db3c}{MULTI\+\_\+\+PARENT\+\_\+\+OPERATORS}} = \mbox{\hyperlink{namespace_text_variation_operators_a7c5372309ab626a02f7f83fadd2df741}{SINGLE\+\_\+\+PARENT\+\_\+\+OPERATORS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_text_variation_operators_a8b696a64e5513646c0562aa19149c460}\index{TextVariationOperators@{TextVariationOperators}!get\_applicable\_operators@{get\_applicable\_operators}}
+\index{get\_applicable\_operators@{get\_applicable\_operators}!TextVariationOperators@{TextVariationOperators}}
+\doxysubsubsection{\texorpdfstring{get\_applicable\_operators()}{get\_applicable\_operators()}}
+{\footnotesize\ttfamily \label{namespace_text_variation_operators_a8b696a64e5513646c0562aa19149c460} 
+Text\+Variation\+Operators.\+get\+\_\+applicable\+\_\+operators (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+parents}{}\end{DoxyParamCaption})}
+
+
+
+Returns the appropriate list of operators depending on the number of parents. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+parents} & Number of parent genomes provided. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of applicable variation operators. get\+\_\+applicable\+\_\+operators function
+\end{DoxyReturn}
+Returns the appropriate list of operators depending on the number of parents.
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+parents} & Number of parent genomes provided. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List of applicable variation operators. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+parents} & int (Any) num\+\_\+parents\+: int as used in get\+\_\+applicable\+\_\+operators. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespace_text_variation_operators_a0b66117e98f26ca0f4a6aefceab8db3c}\index{TextVariationOperators@{TextVariationOperators}!MULTI\_PARENT\_OPERATORS@{MULTI\_PARENT\_OPERATORS}}
+\index{MULTI\_PARENT\_OPERATORS@{MULTI\_PARENT\_OPERATORS}!TextVariationOperators@{TextVariationOperators}}
+\doxysubsubsection{\texorpdfstring{MULTI\_PARENT\_OPERATORS}{MULTI\_PARENT\_OPERATORS}}
+{\footnotesize\ttfamily \label{namespace_text_variation_operators_a0b66117e98f26ca0f4a6aefceab8db3c} 
+list Text\+Variation\+Operators.\+MULTI\+\_\+\+PARENT\+\_\+\+OPERATORS = \mbox{\hyperlink{namespace_text_variation_operators_a7c5372309ab626a02f7f83fadd2df741}{SINGLE\+\_\+\+PARENT\+\_\+\+OPERATORS}}}
+
+\Hypertarget{namespace_text_variation_operators_ac5293638aa288ce3975623f4ae5b22d6}\index{TextVariationOperators@{TextVariationOperators}!nlp@{nlp}}
+\index{nlp@{nlp}!TextVariationOperators@{TextVariationOperators}}
+\doxysubsubsection{\texorpdfstring{nlp}{nlp}}
+{\footnotesize\ttfamily \label{namespace_text_variation_operators_ac5293638aa288ce3975623f4ae5b22d6} 
+Text\+Variation\+Operators.\+nlp = spacy.\+load("{}en\+\_\+core\+\_\+web\+\_\+sm"{})}
+
+\Hypertarget{namespace_text_variation_operators_a7c5372309ab626a02f7f83fadd2df741}\index{TextVariationOperators@{TextVariationOperators}!SINGLE\_PARENT\_OPERATORS@{SINGLE\_PARENT\_OPERATORS}}
+\index{SINGLE\_PARENT\_OPERATORS@{SINGLE\_PARENT\_OPERATORS}!TextVariationOperators@{TextVariationOperators}}
+\doxysubsubsection{\texorpdfstring{SINGLE\_PARENT\_OPERATORS}{SINGLE\_PARENT\_OPERATORS}}
+{\footnotesize\ttfamily \label{namespace_text_variation_operators_a7c5372309ab626a02f7f83fadd2df741} 
+list Text\+Variation\+Operators.\+SINGLE\+\_\+\+PARENT\+\_\+\+OPERATORS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ [}
+\DoxyCodeLine{00002\ \ \ \ \ POSAwareSynonymReplacement(),}
+\DoxyCodeLine{00003\ \ \ \ \ BertMLMOperator(),}
+\DoxyCodeLine{00004\ \ \ \ \ \mbox{\hyperlink{class_tiny_t5_paraphrasing_operator}{TinyT5ParaphrasingOperator}}(),}
+\DoxyCodeLine{00005\ \ \ \ \ BackTranslationOperator()}
+\DoxyCodeLine{00006\ ]}
+
+\end{DoxyCode}
+\Hypertarget{namespace_text_variation_operators_afd943578addf54e1669896d31f1d2dac}\index{TextVariationOperators@{TextVariationOperators}!SYNONYMS@{SYNONYMS}}
+\index{SYNONYMS@{SYNONYMS}!TextVariationOperators@{TextVariationOperators}}
+\doxysubsubsection{\texorpdfstring{SYNONYMS}{SYNONYMS}}
+{\footnotesize\ttfamily \label{namespace_text_variation_operators_afd943578addf54e1669896d31f1d2dac} 
+dict Text\+Variation\+Operators.\+SYNONYMS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ =\ \ \{}
+\DoxyCodeLine{00002\ \ \ \ \ \textcolor{stringliteral}{"{}good"{}}:\ [\textcolor{stringliteral}{"{}great"{}},\ \textcolor{stringliteral}{"{}excellent"{}},\ \textcolor{stringliteral}{"{}nice"{}}],}
+\DoxyCodeLine{00003\ \ \ \ \ \textcolor{stringliteral}{"{}bad"{}}:\ [\textcolor{stringliteral}{"{}terrible"{}},\ \textcolor{stringliteral}{"{}awful"{}},\ \textcolor{stringliteral}{"{}poor"{}}],}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{stringliteral}{"{}people"{}}:\ [\textcolor{stringliteral}{"{}individuals"{}},\ \textcolor{stringliteral}{"{}humans"{}},\ \textcolor{stringliteral}{"{}persons"{}}],}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{stringliteral}{"{}problem"{}}:\ [\textcolor{stringliteral}{"{}issue"{}},\ \textcolor{stringliteral}{"{}challenge"{}},\ \textcolor{stringliteral}{"{}difficulty"{}}],}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{stringliteral}{"{}happy"{}}:\ [\textcolor{stringliteral}{"{}joyful"{}},\ \textcolor{stringliteral}{"{}content"{}},\ \textcolor{stringliteral}{"{}cheerful"{}}],}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{stringliteral}{"{}sad"{}}:\ [\textcolor{stringliteral}{"{}unhappy"{}},\ \textcolor{stringliteral}{"{}miserable"{}},\ \textcolor{stringliteral}{"{}gloomy"{}}],}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}

@@ -1,5 +1,4 @@
 ## @file VariationOperators.py
-# @author Onkar Shelar
 #  @brief Abstract base class for all variation operators used in prompt evolution.
 #
 #  This file defines the VariationOperator interface that all mutation or crossover
@@ -13,12 +12,20 @@ from abc import ABC, abstractmethod
 #
 #  Each variation operator must implement the `apply()` method, which defines how
 #  the input string is modified. Additional metadata can be attached for experiment tracking.
+## VariationOperator class
+# @brief Class that encapsulates VariationOperator behavior.
 class VariationOperator(ABC):
     """
     Abstract base class for all variation operators (mutation, crossover, etc.).
     Each operator must implement the `apply()` method, which returns a modified string.
     """
 
+## __init__ function
+# @brief __init__ method.
+# @param name (Any) Input name
+# @param operator_type (Any) Input operator_type
+# @param description (Any) Input description
+# @return None
     def __init__(self, name=None, operator_type="mutation", description=""):
         """
         :param name: Name of the operator (used in metadata logs).
@@ -30,6 +37,10 @@ class VariationOperator(ABC):
         self.description = description
 
     @abstractmethod
+## apply function
+# @brief apply method.
+# @param text: str (Any) Input text: str
+# @return None
     def apply(self, text: str) -> str:
         """
         Apply the variation to a given input string.
@@ -40,9 +51,15 @@ class VariationOperator(ABC):
         """
         pass
 
+## __str__ function
+# @brief __str__ method.
+# @return None
     def __str__(self):
         return f"{self.name} ({self.operator_type})"
 
+## get_metadata function
+# @brief get_metadata method.
+# @return None
     def get_metadata(self) -> dict:
         """
         Optional method to retrieve metadata about the operator.

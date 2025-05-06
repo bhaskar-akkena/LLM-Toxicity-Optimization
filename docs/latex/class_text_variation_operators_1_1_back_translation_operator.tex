@@ -1,0 +1,91 @@
+\doxysection{Text\+Variation\+Operators.\+Back\+Translation\+Operator Class Reference}
+\hypertarget{class_text_variation_operators_1_1_back_translation_operator}{}\label{class_text_variation_operators_1_1_back_translation_operator}\index{TextVariationOperators.BackTranslationOperator@{TextVariationOperators.BackTranslationOperator}}
+
+
+Translates the input text to Hindi and back to English for paraphrasing via back-\/translation.  
+
+
+Inheritance diagram for Text\+Variation\+Operators.\+Back\+Translation\+Operator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_text_variation_operators_1_1_back_translation_operator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_text_variation_operators_1_1_back_translation_operator_acc75375ef4c8dc26a9166e79777944e5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em {\bfseries{init}} function \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{class_text_variation_operators_1_1_back_translation_operator_a0ecb240155d6541f291b86edd79b05eb}{apply}} (self, str text)
+\begin{DoxyCompactList}\small\item\em apply function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_text_variation_operators_1_1_back_translation_operator_a6d62ab11f798d5643dd41e6e3a3f49f7}{en\+\_\+hi}} = pipeline("{}translation\+\_\+en\+\_\+to\+\_\+hi"{}, model="{}Helsinki-\/NLP/opus-\/mt-\/en-\/hi"{})
+\item 
+\mbox{\hyperlink{class_text_variation_operators_1_1_back_translation_operator_a1e3a11898d52e5231e925ce11b9c210a}{hi\+\_\+en}} = pipeline("{}translation\+\_\+hi\+\_\+to\+\_\+en"{}, model="{}Helsinki-\/NLP/opus-\/mt-\/hi-\/en"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Translates the input text to Hindi and back to English for paraphrasing via back-\/translation. 
+
+\doxylink{class_text_variation_operators_1_1_back_translation_operator}{Back\+Translation\+Operator} class
+
+Class that encapsulates \doxylink{class_text_variation_operators_1_1_back_translation_operator}{Back\+Translation\+Operator} behavior. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_text_variation_operators_1_1_back_translation_operator_acc75375ef4c8dc26a9166e79777944e5}\index{TextVariationOperators.BackTranslationOperator@{TextVariationOperators.BackTranslationOperator}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!TextVariationOperators.BackTranslationOperator@{TextVariationOperators.BackTranslationOperator}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_back_translation_operator_acc75375ef4c8dc26a9166e79777944e5} 
+Text\+Variation\+Operators.\+Back\+Translation\+Operator.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+
+
+{\bfseries{init}} function 
+
+{\bfseries{init}} method. \begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_text_variation_operators_1_1_back_translation_operator_a0ecb240155d6541f291b86edd79b05eb}\index{TextVariationOperators.BackTranslationOperator@{TextVariationOperators.BackTranslationOperator}!apply@{apply}}
+\index{apply@{apply}!TextVariationOperators.BackTranslationOperator@{TextVariationOperators.BackTranslationOperator}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_back_translation_operator_a0ecb240155d6541f291b86edd79b05eb} 
+ str Text\+Variation\+Operators.\+Back\+Translation\+Operator.\+apply (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{str}]{text}{}\end{DoxyParamCaption})}
+
+
+
+apply function 
+
+apply method. 
+\begin{DoxyParams}{Parameters}
+{\em text} & str (Any) Input text\+: str \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_text_variation_operators_1_1_back_translation_operator_a6d62ab11f798d5643dd41e6e3a3f49f7}\index{TextVariationOperators.BackTranslationOperator@{TextVariationOperators.BackTranslationOperator}!en\_hi@{en\_hi}}
+\index{en\_hi@{en\_hi}!TextVariationOperators.BackTranslationOperator@{TextVariationOperators.BackTranslationOperator}}
+\doxysubsubsection{\texorpdfstring{en\_hi}{en\_hi}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_back_translation_operator_a6d62ab11f798d5643dd41e6e3a3f49f7} 
+Text\+Variation\+Operators.\+Back\+Translation\+Operator.\+en\+\_\+hi = pipeline("{}translation\+\_\+en\+\_\+to\+\_\+hi"{}, model="{}Helsinki-\/NLP/opus-\/mt-\/en-\/hi"{})}
+
+\Hypertarget{class_text_variation_operators_1_1_back_translation_operator_a1e3a11898d52e5231e925ce11b9c210a}\index{TextVariationOperators.BackTranslationOperator@{TextVariationOperators.BackTranslationOperator}!hi\_en@{hi\_en}}
+\index{hi\_en@{hi\_en}!TextVariationOperators.BackTranslationOperator@{TextVariationOperators.BackTranslationOperator}}
+\doxysubsubsection{\texorpdfstring{hi\_en}{hi\_en}}
+{\footnotesize\ttfamily \label{class_text_variation_operators_1_1_back_translation_operator_a1e3a11898d52e5231e925ce11b9c210a} 
+Text\+Variation\+Operators.\+Back\+Translation\+Operator.\+hi\+\_\+en = pipeline("{}translation\+\_\+hi\+\_\+to\+\_\+en"{}, model="{}Helsinki-\/NLP/opus-\/mt-\/hi-\/en"{})}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/ea/\mbox{\hyperlink{_text_variation_operators_8py}{Text\+Variation\+Operators.\+py}}\end{DoxyCompactItemize}

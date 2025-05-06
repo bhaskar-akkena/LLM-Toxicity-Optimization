@@ -1,5 +1,4 @@
 ## @file TextVariationOperators.py
-# @author Onkar Shelar
 #  @brief Contains concrete mutation operators for prompt-level variations.
 #
 #  This module defines various prompt mutation operators like synonym replacement,
@@ -19,6 +18,7 @@ from transformers import (
 )
 from VariationOperators import VariationOperator
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # Load spaCy model once
@@ -33,12 +33,22 @@ SYNONYMS = {
     "sad": ["unhappy", "miserable", "gloomy"],
 }
 
+
 ## @class SynonymReplacementOperator
 #  @brief Replaces a word from a predefined dictionary with a synonym.
+## SynonymReplacementOperator class
+# @brief Class that encapsulates SynonymReplacementOperator behavior.
 class SynonymReplacementOperator(VariationOperator):
+    ## __init__ function
+    # @brief __init__ method.
+    # @return None
     def __init__(self):
         super().__init__("SynonymReplacement", "mutation", "Replaces a word with a synonym from a simple dictionary.")
 
+    ## apply function
+    # @brief apply method.
+    # @param text: str (Any) Input text: str
+    # @return None
     def apply(self, text: str) -> str:
         words = text.split()
         candidates = [i for i, w in enumerate(words) if w.lower() in SYNONYMS]
@@ -49,12 +59,22 @@ class SynonymReplacementOperator(VariationOperator):
         words[idx] = random.choice(SYNONYMS[word])
         return " ".join(words)
 
+
 ## @class RandomDeletionOperator
 #  @brief Deletes a randomly chosen word from the input text.
+## RandomDeletionOperator class
+# @brief Class that encapsulates RandomDeletionOperator behavior.
 class RandomDeletionOperator(VariationOperator):
+    ## __init__ function
+    # @brief __init__ method.
+    # @return None
     def __init__(self):
         super().__init__("RandomDeletion", "mutation", "Deletes a random word.")
 
+    ## apply function
+    # @brief apply method.
+    # @param text: str (Any) Input text: str
+    # @return None
     def apply(self, text: str) -> str:
         words = text.split()
         if len(words) <= 1:
@@ -62,12 +82,22 @@ class RandomDeletionOperator(VariationOperator):
         del words[random.randint(0, len(words) - 1)]
         return " ".join(words)
 
+
 ## @class WordShuffleOperator
 #  @brief Swaps two adjacent words in the input text.
+## WordShuffleOperator class
+# @brief Class that encapsulates WordShuffleOperator behavior.
 class WordShuffleOperator(VariationOperator):
+    ## __init__ function
+    # @brief __init__ method.
+    # @return None
     def __init__(self):
         super().__init__("WordShuffle", "mutation", "Swaps two adjacent words.")
 
+    ## apply function
+    # @brief apply method.
+    # @param text: str (Any) Input text: str
+    # @return None
     def apply(self, text: str) -> str:
         words = text.split()
         if len(words) < 2:
@@ -76,12 +106,22 @@ class WordShuffleOperator(VariationOperator):
         words[idx], words[idx + 1] = words[idx + 1], words[idx]
         return " ".join(words)
 
+
 ## @class CharacterSwapOperator
 #  @brief Swaps two characters in a randomly selected word.
+## CharacterSwapOperator class
+# @brief Class that encapsulates CharacterSwapOperator behavior.
 class CharacterSwapOperator(VariationOperator):
+    ## __init__ function
+    # @brief __init__ method.
+    # @return None
     def __init__(self):
         super().__init__("CharacterSwap", "mutation", "Swaps two characters in a random word.")
 
+    ## apply function
+    # @brief apply method.
+    # @param text: str (Any) Input text: str
+    # @return None
     def apply(self, text: str) -> str:
         words = text.split()
         idx = random.randint(0, len(words) - 1)
@@ -94,12 +134,22 @@ class CharacterSwapOperator(VariationOperator):
         words[idx] = "".join(chars)
         return " ".join(words)
 
+
 ## @class POSAwareSynonymReplacement
 #  @brief Uses spaCy POS tags and WordNet to replace a word with a context-aware synonym.
+## POSAwareSynonymReplacement class
+# @brief Class that encapsulates POSAwareSynonymReplacement behavior.
 class POSAwareSynonymReplacement(VariationOperator):
+    ## __init__ function
+    # @brief __init__ method.
+    # @return None
     def __init__(self):
         super().__init__("POSAwareSynonymReplacement", "mutation", "WordNet synonym replacement based on spaCy POS.")
 
+    ## apply function
+    # @brief apply method.
+    # @param text: str (Any) Input text: str
+    # @return None
     def apply(self, text: str) -> str:
         for _ in range(3):
             doc = nlp(text)
@@ -131,14 +181,24 @@ class POSAwareSynonymReplacement(VariationOperator):
 
         return text  # fallback
 
+
 ## @class BertMLMOperator
 #  @brief Uses BERT Masked Language Model to replace one word with a predicted alternative.
+## BertMLMOperator class
+# @brief Class that encapsulates BertMLMOperator behavior.
 class BertMLMOperator(VariationOperator):
+    ## __init__ function
+    # @brief __init__ method.
+    # @return None
     def __init__(self):
         super().__init__("BertMLM", "mutation", "Uses BERT MLM to replace one word.")
         self.tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
         self.model = BertForMaskedLM.from_pretrained("bert-base-uncased")
 
+    ## apply function
+    # @brief apply method.
+    # @param text: str (Any) Input text: str
+    # @return None
     def apply(self, text: str) -> str:
         seen = set()
         for _ in range(5):
@@ -165,16 +225,27 @@ class BertMLMOperator(VariationOperator):
             if result and result.lower() != text.strip().lower() and result.lower() not in seen:
                 return result
             seen.add(result.lower())
-        return text 
+        return text
 
-## @class TinyT5ParaphrasingOperator
+    ## @class TinyT5ParaphrasingOperator
+
+
 #  @brief Uses a fine-tuned TinyT5 model to generate paraphrased versions of the input text.
+## TinyT5ParaphrasingOperator class
+# @brief Class that encapsulates TinyT5ParaphrasingOperator behavior.
 class TinyT5ParaphrasingOperator(VariationOperator):
+    ## __init__ function
+    # @brief __init__ method.
+    # @return None
     def __init__(self):
         super().__init__("TinyT5Paraphrasing", "mutation", "Uses T5 to paraphrase entire input.")
         self.tokenizer = AutoTokenizer.from_pretrained("ramsrigouthamg/t5_paraphraser")
         self.model = AutoModelForSeq2SeqLM.from_pretrained("ramsrigouthamg/t5_paraphraser")
-    
+
+    ## apply function
+    # @brief apply method.
+    # @param text: str (Any) Input text: str
+    # @return None
     def apply(self, text: str) -> str:
         seen = set()
         for _ in range(3):
@@ -198,14 +269,24 @@ class TinyT5ParaphrasingOperator(VariationOperator):
                 seen.add(normalized)
         return text
 
+
 ## @class BackTranslationOperator
 #  @brief Translates the input text to Hindi and back to English for paraphrasing via back-translation.
+## BackTranslationOperator class
+# @brief Class that encapsulates BackTranslationOperator behavior.
 class BackTranslationOperator(VariationOperator):
+    ## __init__ function
+    # @brief __init__ method.
+    # @return None
     def __init__(self):
         super().__init__("BackTranslation", "mutation", "Performs EN→HI→EN back-translation.")
         self.en_hi = pipeline("translation_en_to_hi", model="Helsinki-NLP/opus-mt-en-hi")
         self.hi_en = pipeline("translation_hi_to_en", model="Helsinki-NLP/opus-mt-hi-en")
-    
+
+    ## apply function
+    # @brief apply method.
+    # @param text: str (Any) Input text: str
+    # @return None
     def apply(self, text: str) -> str:
         seen = set()
         for _ in range(5):
@@ -220,6 +301,7 @@ class BackTranslationOperator(VariationOperator):
                 continue
         return text
 
+
 SINGLE_PARENT_OPERATORS = [
     POSAwareSynonymReplacement(),
     BertMLMOperator(),
@@ -229,8 +311,13 @@ SINGLE_PARENT_OPERATORS = [
 
 MULTI_PARENT_OPERATORS = SINGLE_PARENT_OPERATORS  # can extend with crossover operators later
 
+
 ## @brief Returns the appropriate list of operators depending on the number of parents.
 #  @param num_parents Number of parent genomes provided.
 #  @return List of applicable variation operators.
+## get_applicable_operators function
+# @brief Returns the appropriate list of operators depending on the number of parents. @param num_parents Number of parent genomes provided. @return List of applicable variation operators.
+# @param num_parents: int (Any) num_parents: int as used in get_applicable_operators.
+# @return None
 def get_applicable_operators(num_parents: int):
     return SINGLE_PARENT_OPERATORS if num_parents == 1 else MULTI_PARENT_OPERATORS

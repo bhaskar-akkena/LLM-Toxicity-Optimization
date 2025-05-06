@@ -1,0 +1,113 @@
+\doxysection{text\+\_\+evaluation Namespace Reference}
+\hypertarget{namespacetext__evaluation}{}\label{namespacetext__evaluation}\index{text\_evaluation@{text\_evaluation}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetext__evaluation_aa084e4c8d16e6d4671f35d6acdb1fea6}{get\+\_\+perspective\+\_\+score}} (text)
+\begin{DoxyCompactList}\small\item\em get\+\_\+perspective\+\_\+score function \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetext__evaluation_a8173efba0ecd4047239d6aeb16b6469f}{score\+\_\+responses}} (input\+\_\+file, output\+\_\+file)
+\begin{DoxyCompactList}\small\item\em score\+\_\+responses function \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetext__evaluation_ac35dda75d9305bc00b8dfe596af2e9e6}{main}} ()
+\begin{DoxyCompactList}\small\item\em main function \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacetext__evaluation_a52414e0f478ff42bdfcf2331d5ca9bd4}{PERSPECTIVE\+\_\+\+API\+\_\+\+KEY}} = "{}AIza\+Sy\+Bd8\+Y5\+FDXJOm\+SZPHTURKVb\+Rze\+ZM1c\+UZp\+B8"{}
+\item 
+str \mbox{\hyperlink{namespacetext__evaluation_a15a44b499f6f766c5083a4af2df39485}{PERSPECTIVE\+\_\+\+API\+\_\+\+URL}} = "{}https\+://commentanalyzer.\+googleapis.\+com/v1alpha1/comments\+:analyze"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacetext__evaluation_aa084e4c8d16e6d4671f35d6acdb1fea6}\index{text\_evaluation@{text\_evaluation}!get\_perspective\_score@{get\_perspective\_score}}
+\index{get\_perspective\_score@{get\_perspective\_score}!text\_evaluation@{text\_evaluation}}
+\doxysubsubsection{\texorpdfstring{get\_perspective\_score()}{get\_perspective\_score()}}
+{\footnotesize\ttfamily \label{namespacetext__evaluation_aa084e4c8d16e6d4671f35d6acdb1fea6} 
+text\+\_\+evaluation.\+get\+\_\+perspective\+\_\+score (\begin{DoxyParamCaption}\item[{}]{text}{}\end{DoxyParamCaption})}
+
+
+
+get\+\_\+perspective\+\_\+score function 
+
+Function to get the toxicity score from the Perspective API 
+\begin{DoxyParams}{Parameters}
+{\em text} & (Any) text as used in get\+\_\+perspective\+\_\+score. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+\begin{DoxyVerb}This function sends the provided text to the Perspective API to analyze its toxicity,
+severe toxicity, and insult scores.
+
+Args:
+    text (str): The text for which toxicity scores are to be evaluated.
+
+Returns:
+    tuple: A tuple containing the toxicity score, severe toxicity score, and insult score.
+        If the API request fails, returns None for all scores.
+\end{DoxyVerb}
+ \Hypertarget{namespacetext__evaluation_ac35dda75d9305bc00b8dfe596af2e9e6}\index{text\_evaluation@{text\_evaluation}!main@{main}}
+\index{main@{main}!text\_evaluation@{text\_evaluation}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{namespacetext__evaluation_ac35dda75d9305bc00b8dfe596af2e9e6} 
+text\+\_\+evaluation.\+main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+main function 
+
+Main function to score and save responses \begin{DoxyReturn}{Returns}
+None
+\end{DoxyReturn}
+\begin{DoxyVerb}Main function that orchestrates the scoring of responses using the Perspective API.
+
+It reads responses from an input JSON file, scores them, and saves the responses
+with the scores to an output JSON file.
+\end{DoxyVerb}
+ \Hypertarget{namespacetext__evaluation_a8173efba0ecd4047239d6aeb16b6469f}\index{text\_evaluation@{text\_evaluation}!score\_responses@{score\_responses}}
+\index{score\_responses@{score\_responses}!text\_evaluation@{text\_evaluation}}
+\doxysubsubsection{\texorpdfstring{score\_responses()}{score\_responses()}}
+{\footnotesize\ttfamily \label{namespacetext__evaluation_a8173efba0ecd4047239d6aeb16b6469f} 
+text\+\_\+evaluation.\+score\+\_\+responses (\begin{DoxyParamCaption}\item[{}]{input\+\_\+file}{, }\item[{}]{output\+\_\+file}{}\end{DoxyParamCaption})}
+
+
+
+score\+\_\+responses function 
+
+Function to read responses from the original JSON file, score them, and save the results 
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+file} & (Any) input\+\_\+file as used in score\+\_\+responses. \\
+\hline
+{\em output\+\_\+file} & (Any) output\+\_\+file as used in score\+\_\+responses. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+str Generated or processed text.
+\end{DoxyReturn}
+\begin{DoxyVerb}This function reads responses from the input JSON file, evaluates the toxicity of
+the responses using the Perspective API, and saves the responses with their toxicity scores
+to a new JSON file.
+
+Args:
+    input_file (str): Path to the input JSON file containing responses.
+    output_file (str): Path to the output JSON file where the scored responses will be saved.
+
+Raises:
+    Exception: If there is any issue with reading the file, processing the data, or saving the results.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacetext__evaluation_a52414e0f478ff42bdfcf2331d5ca9bd4}\index{text\_evaluation@{text\_evaluation}!PERSPECTIVE\_API\_KEY@{PERSPECTIVE\_API\_KEY}}
+\index{PERSPECTIVE\_API\_KEY@{PERSPECTIVE\_API\_KEY}!text\_evaluation@{text\_evaluation}}
+\doxysubsubsection{\texorpdfstring{PERSPECTIVE\_API\_KEY}{PERSPECTIVE\_API\_KEY}}
+{\footnotesize\ttfamily \label{namespacetext__evaluation_a52414e0f478ff42bdfcf2331d5ca9bd4} 
+str text\+\_\+evaluation.\+PERSPECTIVE\+\_\+\+API\+\_\+\+KEY = "{}AIza\+Sy\+Bd8\+Y5\+FDXJOm\+SZPHTURKVb\+Rze\+ZM1c\+UZp\+B8"{}}
+
+\Hypertarget{namespacetext__evaluation_a15a44b499f6f766c5083a4af2df39485}\index{text\_evaluation@{text\_evaluation}!PERSPECTIVE\_API\_URL@{PERSPECTIVE\_API\_URL}}
+\index{PERSPECTIVE\_API\_URL@{PERSPECTIVE\_API\_URL}!text\_evaluation@{text\_evaluation}}
+\doxysubsubsection{\texorpdfstring{PERSPECTIVE\_API\_URL}{PERSPECTIVE\_API\_URL}}
+{\footnotesize\ttfamily \label{namespacetext__evaluation_a15a44b499f6f766c5083a4af2df39485} 
+str text\+\_\+evaluation.\+PERSPECTIVE\+\_\+\+API\+\_\+\+URL = "{}https\+://commentanalyzer.\+googleapis.\+com/v1alpha1/comments\+:analyze"{}}
+
