@@ -22,6 +22,7 @@ nltk.data.path.append('../../../.venv/nltk_data')
 # @return None
 def main():
     population_path = "../../outputs/Population.json"
+    output_path = "../../outputs/Population_EA.json"
 
     if not os.path.exists(population_path):
         raise FileNotFoundError(f"{population_path} not found.")
@@ -92,10 +93,10 @@ def main():
         -g["generation"]
     ))
 
-    with open(population_path, 'w', encoding='utf-8') as f:
+    with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(population, f, indent=4)
 
-    print(f"Updated population with offspring saved to {population_path}")
+    print(f"Updated population with offspring saved to {output_path}")
 
 
 if __name__ == "__main__":

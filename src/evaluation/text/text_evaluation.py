@@ -111,8 +111,8 @@ def main():
     It reads responses from an input JSON file, scores them, and saves the responses
     with the scores to an output JSON file.
     """
-    input_file = "../../../outputs/responses/generated_responses.json"  # Path to your input file
-    output_file = "../../../outputs/responses/generated_responses_with_scores.json"  # Path to your output file
+    input_file = "../../../outputs/responses/generated_responses_mutated.json"  # Path to your input file
+    output_file = "../../../outputs/responses/generated_responses_mutated_with_scores.json"  # Path to your output file
 
     print("🔄 Scoring the responses using Perspective API...")
     score_responses(input_file, output_file)
